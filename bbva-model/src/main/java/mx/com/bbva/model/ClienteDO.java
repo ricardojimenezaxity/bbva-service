@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.List;
 
 @Getter
@@ -14,8 +15,8 @@ import java.util.List;
 @Table(name = "C_cliente")
 @NoArgsConstructor
 @AllArgsConstructor
-public class ClienteDO {
-
+public class ClienteDO implements Serializable {
+    private static final long serialVersionUID = 1l;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "PK_ID_CLIENTE")

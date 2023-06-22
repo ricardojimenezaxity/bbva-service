@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Date;
 
 @Getter
@@ -14,7 +15,8 @@ import java.util.Date;
 @Table(name = "C_TARJETAS")
 @NoArgsConstructor
 @AllArgsConstructor
-public class TarjetaDO {
+public class TarjetaDO implements Serializable {
+    private static final long serialVersionUID = 1l;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "PK_ID_TARJETA")
