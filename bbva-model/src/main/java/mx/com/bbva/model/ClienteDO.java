@@ -19,7 +19,7 @@ public class ClienteDO {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "PK_ID_CLIENTE")
-    private  Integer id;
+    private  Integer idCliente;
     @Column(name = "NOMBRE")
     private String nombre ;
     @Column(name = "AP_PATERNO")

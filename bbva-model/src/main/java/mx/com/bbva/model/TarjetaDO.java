@@ -18,7 +18,7 @@ public class TarjetaDO {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "PK_ID_TARJETA")
-    private Integer id;
+    private Integer idTarjeta;
     @Column( name = "NO_TARJETA")
     private String numTarjeta;
     @Column( name = "CLABE")

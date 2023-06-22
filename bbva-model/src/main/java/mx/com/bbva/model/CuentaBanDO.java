@@ -18,7 +18,7 @@ public class CuentaBanDO {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "PK_ID_CUENTA")
-    private Integer id;
+    private Integer idCuenta;
 
     @Column(name = "NO_CUENTA")
     private String noCuenta;
@@ -32,5 +32,8 @@ public class CuentaBanDO {
 
     @Column(name = "SALDO")
     private double saldo;
+
+    @OneToMany(mappedBy = "Transaccion", cascade = CascadeType.ALL)
+    private List<TransaccionDO> transaccionDOS;
 
 }
