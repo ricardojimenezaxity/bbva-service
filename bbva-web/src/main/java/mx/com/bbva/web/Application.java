@@ -33,7 +33,6 @@ public class Application {
             LOG.info(name);
         }
 
-        System.out.println("Hola mundo");
     }
 
     @Bean
