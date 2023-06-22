@@ -32,6 +32,8 @@ public class Application {
         for (String name : applicationContext.getBeanDefinitionNames()) {
             LOG.info(name);
         }
+
+        System.out.println("Hola mundo");
     }
 
     @Bean
