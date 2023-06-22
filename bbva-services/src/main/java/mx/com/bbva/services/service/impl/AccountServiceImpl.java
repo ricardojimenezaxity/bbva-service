@@ -9,18 +9,18 @@ import java.util.List;
 
 public class AccountServiceImpl implements AccountService {
     @Override
-    public BalanceTO getBalance(String accountNumber) {
+    public BalanceTO getBalance(String accountNumber) {   // Pedro
 
         return null;
     }
 
     @Override
-    public List<MovementTO> getAllMovements(String accountNumber) {
+    public List<MovementTO> getAllMovements(String accountNumber) { // Serio
         return null;
     }
 
     @Override
-    public ResponseTO getRetiro(String code) {
+    public ResponseTO getRetiro(String code) { // Juan
         return null;
     }
 }

@@ -7,14 +7,14 @@ import mx.com.bbva.services.service.TransferService;
 
 public class TransferServiceImpl implements TransferService {
     @Override
-    public ResponseTO tansferenciaC(TransferAccountTO request) {
+    public ResponseTO tansferenciaC(TransferAccountTO request) {  // Ricardo
 
 
         return null;
     }
 
     @Override
-    public ResponseTO transferenciaSpei(TransferSpeiTO request) {
+    public ResponseTO transferenciaSpei(TransferSpeiTO request) { // Carlos
         return null;
     }
 }
