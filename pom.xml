@@ -29,7 +29,7 @@
         <spring.version>2.3.12.RELEASE</spring.version>
         <springfox.swagger.version>2.9.2</springfox.swagger.version>
         <spring.kafka.version>2.7.2</spring.kafka.version>
-        <postgressql.version>42.2.2</postgressql.version>
+        <mysql.version>8.0.33</mysql.version>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
         <jacoco.version>0.8.4</jacoco.version>
@@ -127,9 +127,9 @@
                 <version>${lombok.version}</version>
             </dependency>
             <dependency>
-                <groupId>org.postgresql</groupId>
-                <artifactId>postgresql</artifactId>
-                <version>${postgressql.version}</version>
+                <groupId>mysql</groupId>
+			    <artifactId>mysql-connector-java</artifactId>
+			    <version>${mysql.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.h2database</groupId>
