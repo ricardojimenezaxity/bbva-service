@@ -6,7 +6,7 @@ spring:
     driver-class-name: org.h2.Driver
     initialization-mode: always
   jpa:
-    database-platform: org.hibernate.dialect.PostgreSQL9Dialect
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
     show-sql: true
   application:
     name: bbva-service
