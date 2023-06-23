@@ -7,6 +7,7 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.Date;
 import java.util.List;
 
 @Getter
@@ -36,6 +37,9 @@ public class CuentaBanDO implements Serializable{
 
     @Column(name = "SALDO")
     private double saldo;
+
+    @Column(name = "VIGENCIA")
+    private Date vigencia;
 
     @OneToMany(mappedBy = "Transaccion", cascade = CascadeType.ALL)
     private List<TransaccionDO> transaccionDOS;

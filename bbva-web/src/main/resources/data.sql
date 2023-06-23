@@ -1,1 +1,46 @@
 INSERT INTO users (ds_name, ds_lastname, age) VALUES ('Javier', 'Rodriguez', 4);
+
+INSERT INTO `C_Cliente` (`PK_ID_CLIENTE`, `NOMBRE`, `AP_PATERNO`, `AP_MATERNO`, `TELEFONO`, `CORREO`, `DIRECCION`) VALUES
+(1, 'Juan', 'García', 'López', '555-1234', 'juan@example.com', 'Calle 123'),
+(2, 'María', 'Martínez', 'Gómez', '555-5678', 'maria@example.com', 'Avenida 456'),
+(3, 'Carlos', 'Rodríguez', 'Pérez', '555-9012', 'carlos@example.com', 'Plaza 789'),
+(4, 'Ana', 'Hernández', 'Sánchez', '555-3456', 'ana@example.com', 'Calle 789'),
+(5, 'Pedro', 'López', 'González', '555-7890', 'pedro@example.com', 'Avenida 012'),
+(6, 'Luisa', 'Torres', 'Ramírez', '555-2345', 'luisa@example.com', 'Plaza 345'),
+(7, 'Sergio', 'Vargas', 'Jiménez', '555-6789', 'sergio@example.com', 'Calle 678'),
+(8, 'Marta', 'González', 'Rojas', '555-9012', 'marta@example.com', 'Avenida 901'),
+(9, 'Javier', 'Silva', 'Pérez', '555-2345', 'javier@example.com', 'Plaza 234'),
+(10, 'Patricia', 'Gómez', 'Sánchez', '555-5678', 'patricia@example.com', 'Calle 567'),
+(11, 'Roberto', 'Jiménez', 'López', '555-9012', 'roberto@example.com', 'Avenida 890'),
+(12, 'Alejandra', 'Pérez', 'González', '555-3456', 'alejandra@example.com', 'Plaza 123'),
+(13, 'Fernando', 'Rojas', 'Martínez', '555-7890', 'fernando@example.com', 'Calle 456'),
+(14, 'Laura', 'López', 'Hernández', '555-1234', 'laura@example.com', 'Avenida 789'),
+(15, 'Gabriela', 'Sánchez', 'Torres', '555-5678', 'gabriela@example.com', 'Plaza 012'),
+(16, 'Ricardo', 'Ramírez', 'Vargas', '555-9012', 'ricardo@example.com', 'Calle 345'),
+(17, 'Martha', 'Jiménez', 'Gómez', '555-2345', 'martha@example.com', 'Avenida 678'),
+(18, 'Antonio', 'Pérez', 'Silva', '555-6789', 'antonio@example.com', 'Plaza 901'),
+(19, 'Carmen', 'González', 'Rojas', '555-9012', 'carmen@example.com', 'Calle 234'),
+(20, 'Andrés', 'López', 'Gómez', '555-3456', 'andres@example.com', 'Avenida' );
+
+
+INSERT INTO `C_CUENTAS_BAN` (`PK_ID_CUENTA`, `NO_CUENTA`, `FK_ID_CLIENTE`, `FK_TARJETA`, `VIGENCIA`, `SALDO`) VALUES
+('CUENTA001', 123456, 1, 1001, '2024-06-01', 1000.50),
+('CUENTA002', 234567, 2, 1002, '2023-12-31', 500.25),
+('CUENTA003', 345678, 3, 1003, '2024-03-15', 750.75),
+('CUENTA004', 456789, 4, 1004, '2025-02-28', 1200.80),
+('CUENTA005', 567890, 5, 1005, '2023-09-30', 350.90),
+('CUENTA006', 678901, 6, 1006, '2024-07-12', 900.60),
+('CUENTA007', 789012, 7, 1007, '2023-11-15', 200.30),
+('CUENTA008', 890123, 8, 1008, '2024-05-20', 1500.20),
+('CUENTA009', 901234, 9, 1009, '2025-01-01', 100.50),
+('CUENTA010', 123450, 10, 1010, '2023-12-31', 800.75),
+('CUENTA011', 234561, 11, 1011, '2024-09-15', 600.90),
+('CUENTA012', 345672, 12, 1012, '2025-08-31', 950.25),
+('CUENTA013', 456783, 13, 1013, '2023-06-30', 400.10),
+('CUENTA014', 567894, 14, 1014, '2024-01-15', 1100.35),
+('CUENTA015', 678905, 15, 1015, '2023-10-20', 250.50),
+('CUENTA016', 789016, 16, 1016, '2024-12-31', 1800.70),
+('CUENTA017', 890127, 17, 1017, '2025-07-15', 700.25),
+('CUENTA018', 901238, 18, 1018, '2023-12-31', 950.90),
+('CUENTA019', 123459, 19, 1019, '2024-10-31', 300.80),
+('CUENTA020', 234560, 20, 1020, '2025-09-30', 600.10);

@@ -40,6 +40,8 @@ public class TransaccionDO implements Serializable {
     private String nomDes;
     @Column(name = "CLABE_DESTINO")
     private String clabeDes;
+    @Column(name = "BANCO_DESTINO")
+    private String banco;
     @Column(name = "LOCACION")
     private String location;
     @Column(name = "SPEIS")
