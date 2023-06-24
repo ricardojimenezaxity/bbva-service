@@ -32,7 +32,7 @@ public class CuentaBanDO implements Serializable{
     @JoinColumn(name = "C_cliente_PK_ID_CLIENTE" , referencedColumnName = "PK_ID_CLIENTE")
     private ClienteDO cliente;
 
-    @OneToMany(mappedBy = "Tarjeta", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "cuenta", cascade = CascadeType.ALL)
     private List<TarjetaDO> tarjeta;
 
     @Column(name = "SALDO")
@@ -41,7 +41,7 @@ public class CuentaBanDO implements Serializable{
     @Column(name = "VIGENCIA")
     private Date vigencia;
 
-    @OneToMany(mappedBy = "Transaccion", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "cuentaDO", cascade = CascadeType.ALL)
     private List<TransaccionDO> transaccionDOS;
 
 }

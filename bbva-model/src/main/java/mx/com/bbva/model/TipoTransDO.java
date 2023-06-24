@@ -21,8 +21,8 @@ public class TipoTransDO implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "PK_ID_TIPO")
     private int idTipoTrans;
-    @Column(name = "PK_ID_TIPO")
+    @Column(name = "DESCRIPCION")
     private String descripcion;
-    @OneToMany(mappedBy = "T_TRANSACCION", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "tipoTransDO", cascade = CascadeType.ALL)
     private List<TransaccionDO> transaccion;
 }

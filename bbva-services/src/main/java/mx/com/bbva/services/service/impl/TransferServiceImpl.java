@@ -31,7 +31,8 @@ public class TransferServiceImpl implements TransferService {
         response.setFecha(new Date());
         response.setCuentaDO(null);
         response.setTarDestino(request.getCardNumberD());
-        response.set
+        //
+      //  response.set
         return null;
     }
 }

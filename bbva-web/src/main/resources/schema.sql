@@ -1,3 +1,4 @@
+
 CREATE TABLE `C_Cliente` (
   `PK_ID_CLIENTE` integer PRIMARY KEY,
   `NOMBRE` varchar(50),

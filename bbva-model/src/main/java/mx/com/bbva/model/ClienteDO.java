@@ -33,7 +33,7 @@ public class ClienteDO implements Serializable {
     private String correo;
     @Column(name = "DIRECCION")
     private String direccion;
-    @OneToMany(mappedBy = "Cliente", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "cliente", cascade = CascadeType.ALL)
     private List<CuentaBanDO> cuentas;
 
 
