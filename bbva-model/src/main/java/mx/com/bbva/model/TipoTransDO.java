@@ -19,10 +19,19 @@ public class TipoTransDO implements Serializable {
     private static final long serialVersionUID = 1l;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "ID_TIPO")
+    @Column(name = "ID_TIPOTRANS")
     private int idTipoTrans;
     @Column(name = "DESCRIPCION")
     private String descripcion;
     @OneToMany(mappedBy = "tipoTransDO", cascade = CascadeType.ALL) /**/
     private List<TransaccionDO> transaccion;
+
+    @Override
+    public String toString() {
+        return "TipoTransDO{" +
+                "idTipoTrans=" + idTipoTrans +
+                ", descripcion='" + descripcion + '\'' +
+                ", transaccion=" + transaccion +
+                '}';
+    }
 }

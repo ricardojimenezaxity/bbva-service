@@ -23,10 +23,10 @@ public class TransaccionDO implements Serializable {
     @Column(name = "ID_TRANS")
     private int idTrans;
     @ManyToOne
-    @JoinColumn(name = "C_CUENTAS_BAN_ID_CUENTA" , referencedColumnName = "ID_CUENTA")
+    @JoinColumn(name = "FK_ID_CUENTA" , referencedColumnName = "ID_CUENTA")
     private CuentaBanDO cuentaDO;
     @ManyToOne
-    @JoinColumn(name = "C_TIPOS_TRANS_ID_TIPO" , referencedColumnName = "ID_TIPO")
+    @JoinColumn(name = "FK_ID_TIPOTRANS" , referencedColumnName = "ID_TIPOTRANS")
     private TipoTransDO tipoTransDO;
     @Column(name = "MONTO")
     private double monto;
@@ -39,12 +39,30 @@ public class TransaccionDO implements Serializable {
     @Column(name = "CLABE_DESTINO")
     private String clabeDes;
     @ManyToOne
-    @JoinColumn(name = "C_BIN_BANCOS_FK_ID_BANCO" , referencedColumnName = "ID_BANCO") /**/
+    @JoinColumn(name = "FK_ID_BANCO" , referencedColumnName = "ID_BANCO") /**/
     private BancoDO banco;
     @Column(name = "DESTINATARIO")
     private String nomDes;
     @Column(name = "LOCACION")
     private String location;
-    @Column(name = "SPEIS")
+    @Column(name = "SPEI")
     private String spei;
+
+    @Override
+    public String toString() {
+        return "TransaccionDO{" +
+                "idTrans=" + idTrans +
+                ", cuentaDO=" + cuentaDO +
+                ", tipoTransDO=" + tipoTransDO +
+                ", monto=" + monto +
+                ", fecha=" + fecha +
+                ", tarDestino='" + tarDestino + '\'' +
+                ", cuentaDestino='" + cuentaDestino + '\'' +
+                ", clabeDes='" + clabeDes + '\'' +
+                ", banco=" + banco +
+                ", nomDes='" + nomDes + '\'' +
+                ", location='" + location + '\'' +
+                ", spei='" + spei + '\'' +
+                '}';
+    }
 }

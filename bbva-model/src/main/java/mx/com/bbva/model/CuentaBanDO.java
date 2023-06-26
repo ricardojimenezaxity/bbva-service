@@ -28,7 +28,7 @@ public class CuentaBanDO implements Serializable{
     @Column(name = "NO_CUENTA")
     private String noCuenta;
 
-    @ManyToOne
+    @ManyToOne         // hace referencia a la fk de la tabla base
     @JoinColumn(name = "FK_ID_CLIENTE" , referencedColumnName = "ID_CLIENTE") // REFRENECE HACE REFERENCIA A LA LLAVE PRIMARIA DE CLIENTE
     private ClienteDO cliente;
 

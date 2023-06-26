@@ -12,7 +12,7 @@ import java.util.List;
 @Getter
 @Setter
 @Entity
-@Table(name = "C_cliente")
+@Table(name = "C_BIN_BANCOS")
 @NoArgsConstructor
 @AllArgsConstructor
 public class BancoDO implements Serializable {

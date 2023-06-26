@@ -32,9 +32,8 @@ public class AccountController {
     }
     @GetMapping(value = "/movements/{accountNumber}", produces = {MediaType.APPLICATION_JSON_VALUE})
     public ResponseEntity<List<MovementTO>> movimientos(@PathVariable("accountNumber") String accountNumber) {
-        // List<MovementTO> movimiento =
-        //return new ResponseEntity<>(movimiento, HttpStatus.OK);
-        return null;
+        List<MovementTO> movimientos =accountFacade.getAllMovements(accountNumber);
+        return new ResponseEntity<>(movimientos, HttpStatus.OK);
     }
 
     @PostMapping(value = "/withdrawal/{code}", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)

@@ -20,7 +20,7 @@ public class AccountFacade implements IaccountFacade {
 
     @Override
     public List<MovementTO> getAllMovements(String accountNumber) {
-        return null;
+        return accountService.getAllMovements(accountNumber);
     }
 
     @Override

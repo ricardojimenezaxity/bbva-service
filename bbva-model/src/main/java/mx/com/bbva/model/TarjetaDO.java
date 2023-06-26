@@ -33,6 +33,6 @@ public class TarjetaDO implements Serializable {
     private double saldo;
 
     @ManyToOne
-    @JoinColumn(name = "C_CUENTAS_BAN_ID_CUENTA" , referencedColumnName = "ID_CUENTA")
+    @JoinColumn(name = "FK_ID_CUENTA" , referencedColumnName = "ID_CUENTA")
     private CuentaBanDO cuenta;
 }
