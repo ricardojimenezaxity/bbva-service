@@ -29,7 +29,7 @@ public class CuentaBanDO implements Serializable{
     private String noCuenta;
 
     @ManyToOne
-    @JoinColumn(name = "T_CLIENTE_ID_CLIENTE" , referencedColumnName = "ID_CLIENTE") // REFRENECE HACE REFERENCIA A LA LLAVE PRIMARIA DE CLIENTE
+    @JoinColumn(name = "FK_ID_CLIENTE" , referencedColumnName = "ID_CLIENTE") // REFRENECE HACE REFERENCIA A LA LLAVE PRIMARIA DE CLIENTE
     private ClienteDO cliente;
 
     @OneToMany(mappedBy = "cuenta", cascade = CascadeType.ALL)
