@@ -12,14 +12,14 @@ import java.util.List;
 @Getter
 @Setter
 @Entity
-@Table(name = "C_cliente")
+@Table(name = "T_CLIENTE")
 @NoArgsConstructor
 @AllArgsConstructor
 public class ClienteDO implements Serializable {
     private static final long serialVersionUID = 1l;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "PK_ID_CLIENTE")
+    @Column(name = "ID_CLIENTE")
     private  Integer idCliente;
     @Column(name = "NOMBRE")
     private String nombre ;

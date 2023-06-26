@@ -6,7 +6,9 @@ import mx.com.bbva.commons.to.BalanceTO;
 import mx.com.bbva.commons.to.MovementTO;
 import mx.com.bbva.commons.to.ResponseTO;
 import mx.com.bbva.commons.to.WithdrawalTO;
+import mx.com.bbva.services.facade.impl.AccountFacade;
 import org.apache.coyote.Response;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.repository.query.Param;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -20,10 +22,13 @@ import java.util.List;
 @RequestMapping("/account")
 @Api(value = "")
 public class AccountController {
+    @Autowired
+    AccountFacade accountFacade;
 
     @GetMapping(value = "/balance/{accountNumber}", produces = {MediaType.APPLICATION_JSON_VALUE})
-    public ResponseEntity <List<BalanceTO>> balance(@PathVariable("accountNumber") String accountNumber) {
-        return null;
+    public ResponseEntity <BalanceTO> balance(@PathVariable("accountNumber") String accountNumber) {
+        BalanceTO balance= accountFacade.getBalance(accountNumber);
+        return new ResponseEntity<>(balance, HttpStatus.OK);
     }
     @GetMapping(value = "/movements/{accountNumber}", produces = {MediaType.APPLICATION_JSON_VALUE})
     public ResponseEntity<List<MovementTO>> movimientos(@PathVariable("accountNumber") String accountNumber) {

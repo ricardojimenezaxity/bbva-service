@@ -1,8 +1,7 @@
-package mx.com.bbva.services.stream;
+package mx.com.bbva.services.service.impl.stream;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Component;
 
 @Component

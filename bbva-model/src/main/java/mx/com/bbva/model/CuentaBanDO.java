@@ -22,14 +22,14 @@ public class CuentaBanDO implements Serializable{
     private static final long serialVersionUID = 1l;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "PK_ID_CUENTA")
+    @Column(name = "ID_CUENTA")
     private Integer idCuenta;
 
     @Column(name = "NO_CUENTA")
     private String noCuenta;
 
     @ManyToOne
-    @JoinColumn(name = "C_cliente_PK_ID_CLIENTE" , referencedColumnName = "PK_ID_CLIENTE")
+    @JoinColumn(name = "T_CLIENTE_ID_CLIENTE" , referencedColumnName = "ID_CLIENTE") // REFRENECE HACE REFERENCIA A LA LLAVE PRIMARIA DE CLIENTE
     private ClienteDO cliente;
 
     @OneToMany(mappedBy = "cuenta", cascade = CascadeType.ALL)
@@ -40,6 +40,9 @@ public class CuentaBanDO implements Serializable{
 
     @Column(name = "VIGENCIA")
     private Date vigencia;
+
+    @Column(name = "CLABE")
+    private String clabe;
 
     @OneToMany(mappedBy = "cuentaDO", cascade = CascadeType.ALL)
     private List<TransaccionDO> transaccionDOS;

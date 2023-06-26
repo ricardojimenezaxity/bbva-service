@@ -19,7 +19,7 @@ public class CodRetiro implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "PK_ID_CODIGO")
+    @Column(name = "ID_CODIGO")
     private Integer idCodigo;
     @Column(name = "CODIGO")
     private Integer codigo;

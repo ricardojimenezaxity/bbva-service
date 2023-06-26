@@ -1,6 +1,51 @@
+CREATE TABLE `T_TRANSACCION` (
+  `ID_TRANS` integer PRIMARY KEY,
+  `MONTO` double,
+  `FECHA` timestamp,
+  `TARJETA_DESTINO` varchar(16),
+  `CUENTA_DESTINO` varchar(14),
+  `CLABE_DESTINO` varchar(18),
+  `DESTINATARIO` varchar(50),
+  `LOCACION` varchar(100),
+  `SPEI` varchar(50),
+  `FK_ID_CUENTA` integer,
+  `FK_ID_TIPOTRANS` integer,
+  `FK_ID_BANCO` integer
+);
 
-CREATE TABLE `C_Cliente` (
-  `PK_ID_CLIENTE` integer PRIMARY KEY,
+CREATE TABLE `C_BIN_BANCOS` (
+  `ID_BANCO` integer PRIMARY KEY,
+  `PREFIJO_C` varchar(4),
+  `PREFIJO_T` varchar(4),
+  `BANCO` varchar(20)
+);
+
+CREATE TABLE `C_TIPOS_TRANS` (
+  `ID_TIPOTRANS` integer PRIMARY KEY,
+  `DESCRIPCION` varchar(50)
+);
+
+CREATE TABLE `C_CUENTAS_BAN` (
+  `ID_CUENTA` integer PRIMARY KEY,
+  `NO_CUENTA` varchar(50),
+  `SALDO` double,
+  `VIGENCIA` date,
+  `CLABE` varchar(18),
+  `FK_ID_CLIENTE` integer
+);
+
+CREATE TABLE `C_TARJETAS` (
+  `ID_TARJETA` integer PRIMARY KEY,
+  `NO_TARJETA` varchar(16),
+  `VENCIMIENTO` date,
+  `CVV` integer,
+  `STATUS` varchar(20),
+  `SALDO` double,
+  `FK_ID_CUENTA` integer
+);
+
+CREATE TABLE `T_CLIENTE` (
+  `ID_CLIENTE` integer PRIMARY KEY,
   `NOMBRE` varchar(50),
   `AP_PATERNO` varchar(30),
   `AP_MATERNO` varchar(30),
@@ -9,53 +54,23 @@ CREATE TABLE `C_Cliente` (
   `DIRECCION` varchar(100)
 );
 
-CREATE TABLE `C_CUENTAS_BAN` (
-  `PK_ID_CUENTA` integer PRIMARY KEY,
-  `NO_CUENTA` varchar(50),
-  `FK_ID_CLIENTE` integer,
-  `SALDO` double,
-  `VIGENCIA` date
-);
-
-CREATE TABLE `C_TARJETAS` (
-  `PK_ID_TARJETA` integer PRIMARY KEY,
-  `NO_TARJETA` integer,
-  `CLABE` integer,
-  `VENCIMIENTO` date,
-  `CVV` integer,
-  `STATUS` varchar(20),
-  `SALDO` double
-);
-
-CREATE TABLE `C_TIPOS_TRANS` (
-  `PK_ID_TIPO` integer PRIMARY KEY,
-  `DESCRIPCION` varchar(50)
-);
-
-CREATE TABLE `T_TRANSACCION` (
-  `PK_ID_TRANS` integer PRIMARY KEY,
-  `FK_CUENTA_B` varchar(50),
-  `FK_TIPO` integer,
-  `MONTO` double,
-  `FK_FECHA` integer,
-  `C_DESTINO` varchar(50),
-  `TARJETA_DESTINO` integer,
-  `DESTINATARIO` varchar(50),
-  `CLABE_DESTINO` integer,
-  `BANCO_DESTINO` varchar(50),
-  `LOCACION` varchar(100),
-  `SPEI` varchar(50)
-);
-
-CREATE TABLE `C_FECHA` (
-  `PK_ID_FECHA` integer PRIMARY KEY,
-  `FECHA` timestamp,
-  `AÑO` integer,
-  `MES` integer,
-  `DIA` integer
-);
-
 CREATE TABLE `C_COD_RETIRO` (
-  `PK_ID_CODIGO` integer PRIMARY KEY,
+  `ID_CODIGO` integer PRIMARY KEY,
   `CODIGO` integer
 );
+
+
+ALTER TABLE T_TRANSACCION ADD CONSTRAINT FK_CUENTA_BAN FOREIGN KEY (FK_ID_CUENTA) REFERENCES C_CUENTAS_BAN (ID_CUENTA);
+
+ALTER TABLE T_TRANSACCION ADD CONSTRAINT FK_TIPOTRANS FOREIGN KEY (FK_ID_TIPOTRANS) REFERENCES C_TIPOS_TRANS (ID_TIPOTRANS);
+
+ALTER TABLE T_TRANSACCION ADD CONSTRAINT FK_BANCOS FOREIGN KEY (FK_ID_BANCO) REFERENCES C_BIN_BANCOS (ID_BANCO);
+
+ALTER TABLE C_CUENTAS_BAN ADD CONSTRAINT FK_CLIENTES FOREIGN KEY (FK_ID_CLIENTE) REFERENCES T_CLIENTE (ID_CLIENTE);
+
+ALTER TABLE C_TARJETAS ADD CONSTRAINT FK_CUENTAS FOREIGN KEY (FK_ID_CUENTA) REFERENCES C_CUENTAS_BAN (ID_CUENTA);
+
+
+
+
+
