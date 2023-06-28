@@ -13,7 +13,6 @@ public class WithdrawalTO implements Serializable {
     private String cardNumber;
     private String ownerName;
     private String bank;
-    private String cardlesscode;
     private double ammount;
 
 }

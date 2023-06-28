@@ -37,9 +37,9 @@ public class AccountController {
     }
 
     @PostMapping(value = "/withdrawal/{code}", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<ResponseTO> retirar(@RequestBody WithdrawalTO request, @PathVariable("code") String code) {
-        //return new ResponseEntity<>(new ResponseTO(response, "message ok"), HttpStatus.OK);
-        return null;
+    public ResponseEntity<ResponseTO> retirar(@RequestBody WithdrawalTO request, @PathVariable("code") Integer code) {
+        ResponseTO response = accountFacade.createWithdrawal(request,code);
+        return new ResponseEntity<>(response, HttpStatus.OK);
     }
 
 }

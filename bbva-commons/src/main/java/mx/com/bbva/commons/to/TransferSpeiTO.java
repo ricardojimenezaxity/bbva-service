@@ -7,9 +7,9 @@ import java.io.Serializable;
 
 @Getter
 @Setter
-public class TransferSpeiTO implements Serializable {
+public class TransferSpeiTO extends TransferAccountTO implements Serializable {
     private static final long serialVersionUID = 1l;
-    private String ownerNameO;
+   /* private String ownerNameO;
     private String accountNumberO;
     private String cardNumberO;
     private double amount;
@@ -18,8 +18,7 @@ public class TransferSpeiTO implements Serializable {
     private String cardNumberD;
     private String clabe;
     private String bankD;
-    private String concepto;
+    private String concepto;*/
     private String bankOrigin;
     private String speiNumberD;
-
 }

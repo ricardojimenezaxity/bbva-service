@@ -3,6 +3,7 @@ package mx.com.bbva.services.facade;
 import mx.com.bbva.commons.to.BalanceTO;
 import mx.com.bbva.commons.to.MovementTO;
 import mx.com.bbva.commons.to.ResponseTO;
+import mx.com.bbva.commons.to.WithdrawalTO;
 
 import java.util.List;
 
@@ -11,5 +12,5 @@ public interface IaccountFacade {
 
     public List<MovementTO> getAllMovements(String accountNumber);
 
-    public ResponseTO getRetiro(String code);
+    public ResponseTO createWithdrawal(WithdrawalTO withdrawalTO, Integer code);
 }

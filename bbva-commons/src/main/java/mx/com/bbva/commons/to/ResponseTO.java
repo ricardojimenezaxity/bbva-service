@@ -1,5 +1,9 @@
 package mx.com.bbva.commons.to;
 
+import lombok.Getter;
+import lombok.Setter;
+
+
 public class ResponseTO {
     private static final long serialVersionUID = 1l;
     private Integer id;

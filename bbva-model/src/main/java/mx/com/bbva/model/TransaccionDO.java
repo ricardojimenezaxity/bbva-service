@@ -8,6 +8,7 @@ import lombok.Setter;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
+import java.util.Objects;
 
 @Getter
 @Setter
@@ -21,7 +22,7 @@ public class TransaccionDO implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID_TRANS")
-    private int idTrans;
+    private Integer idTrans;
     @ManyToOne
     @JoinColumn(name = "FK_ID_CUENTA" , referencedColumnName = "ID_CUENTA")
     private CuentaBanDO cuentaDO;
@@ -64,5 +65,18 @@ public class TransaccionDO implements Serializable {
                 ", location='" + location + '\'' +
                 ", spei='" + spei + '\'' +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof TransaccionDO)) return false;
+        TransaccionDO that = (TransaccionDO) o;
+        return idTrans == that.idTrans && Double.compare(that.monto, monto) == 0 && cuentaDO.equals(that.cuentaDO) && tipoTransDO.equals(that.tipoTransDO) && fecha.equals(that.fecha) && tarDestino.equals(that.tarDestino) && cuentaDestino.equals(that.cuentaDestino) && clabeDes.equals(that.clabeDes) && banco.equals(that.banco) && nomDes.equals(that.nomDes) && location.equals(that.location) && spei.equals(that.spei);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(idTrans, cuentaDO, tipoTransDO, monto, fecha, tarDestino, cuentaDestino, clabeDes, banco, nomDes, location, spei);
     }
 }

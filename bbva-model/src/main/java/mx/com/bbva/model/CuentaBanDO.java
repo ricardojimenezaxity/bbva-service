@@ -9,6 +9,7 @@ import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
+import java.util.Objects;
 
 @Getter
 @Setter
@@ -47,4 +48,30 @@ public class CuentaBanDO implements Serializable{
     @OneToMany(mappedBy = "cuentaDO", cascade = CascadeType.ALL)
     private List<TransaccionDO> transaccionDOS;
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof CuentaBanDO)) return false;
+        CuentaBanDO that = (CuentaBanDO) o;
+        return Double.compare(that.saldo, saldo) == 0 && idCuenta.equals(that.idCuenta) && noCuenta.equals(that.noCuenta) && cliente.equals(that.cliente) && tarjeta.equals(that.tarjeta) && vigencia.equals(that.vigencia) && clabe.equals(that.clabe) && transaccionDOS.equals(that.transaccionDOS);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(idCuenta, noCuenta, cliente, tarjeta, saldo, vigencia, clabe, transaccionDOS);
+    }
+
+    @Override
+    public String toString() {
+        return "CuentaBanDO{" +
+                "idCuenta=" + idCuenta +
+                ", noCuenta='" + noCuenta + '\'' +
+                ", cliente=" + cliente +
+                ", tarjeta=" + tarjeta +
+                ", saldo=" + saldo +
+                ", vigencia=" + vigencia +
+                ", clabe='" + clabe + '\'' +
+                ", transaccionDOS=" + transaccionDOS +
+                '}';
+    }
 }

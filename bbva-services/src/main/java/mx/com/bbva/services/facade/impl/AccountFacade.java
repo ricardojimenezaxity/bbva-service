@@ -3,6 +3,7 @@ package mx.com.bbva.services.facade.impl;
 import mx.com.bbva.commons.to.BalanceTO;
 import mx.com.bbva.commons.to.MovementTO;
 import mx.com.bbva.commons.to.ResponseTO;
+import mx.com.bbva.commons.to.WithdrawalTO;
 import mx.com.bbva.services.facade.IaccountFacade;
 import mx.com.bbva.services.service.AccountService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,7 +25,9 @@ public class AccountFacade implements IaccountFacade {
     }
 
     @Override
-    public ResponseTO getRetiro(String code) {
-        return null;
+    public ResponseTO createWithdrawal(WithdrawalTO withdrawalTO, Integer code) {
+        return accountService.createWithdrawal(withdrawalTO,code);
     }
+
+
 }
